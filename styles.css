@@ -1,0 +1,1024 @@
+/* ==========================================
+   1. CONFIGURACIÓN GENERAL Y FONDO
+   ========================================== */
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at bottom, #3c2f4d 0%, #050107 70%, #000000 100%);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    min-height: 100dvh;
+    width: 100vw;
+}
+
+#pantalla-inicio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 200;
+    background: radial-gradient(circle at bottom, #2b0c1e 0%, #050107 70%, #000000 100%);
+    background-size: 100% 100%;
+    overflow: hidden;
+    /* Ya no tiene animación de fondo */
+}
+
+#escenario {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Ya no tiene animación de fondo */
+}
+
+/* Contenedor scroll vertical móviles */
+.torre-rapunzel-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cabecera superior con la imagen principal */
+.cabecera-rapunzel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    z-index: 10;
+    text-align: center;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.img-rapunzel-torre {
+    width: 110px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
+    margin-bottom: 12px;
+}
+
+.burbuja-texto {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 10px;
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    max-width: 340px;
+}
+
+.burbuja-texto h2 {
+    font-size: 1.4rem;
+    margin: 0 0 8px 0;
+    color: #fff3b0;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.burbuja-texto p {
+    font-size: 0.9rem;
+    color: #fceade;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Contenedor de la secuencia */
+.secuencia-cabello-imagenes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.img-tira-cabello {
+    width: 110px; /* Cambia este ancho si necesitas que se vean más gruesas o delgadas */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
+    display: block;
+}
+
+/* ==========================================
+   TU ZONA DE CONTROL (Ajusta aquí a tu gusto)
+   ========================================== */
+.cabello-1 {
+    margin-top: 3px;
+    transform: translateX(0px);
+}
+
+.cabello-2 {
+    margin-top: 10px; 
+    transform: translateX(-6px); /* Alinea horizontalmente */
+}
+
+.punta-abajo {
+    margin-top: -100px; /* Sube un poquito la punta si deseas acercarla al botón */
+    margin-bottom: 50px; /* Espacio extra al final del scroll para que luzca cómodo */
+}
+
+/* Sección final al fondo de la bajada */
+.final-cabello {
+    text-align: center;
+    padding: 10px 0px 80px 10px;
+    z-index: 10;
+}
+
+.mensaje-llegada {
+    font-size: 1.1rem;
+    color: #ff99cc;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 102, 178, 0.5);
+}
+
+#btn-entrar-magia {
+    background: linear-gradient(135deg, #ff66b2, #ff3399);
+    color: white;
+    padding: 15px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 102, 178, 0.8);
+    transition: transform 0.2s ease;
+}
+
+#btn-entrar-magia:active {
+    transform: scale(0.95);
+}
+
+#escenario {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==========================================
+   3. TEXTOS DE FELIZ CUMPLEAÑOS
+   ========================================== */
+.texto-dedicatoria {
+    text-align: center;
+    margin-top: 12vh;
+    padding: 0 20px;
+    z-index: 50;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.linea1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem; 
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 153, 204, 0.9);
+    margin: 0;
+}
+
+.linea2 {
+    font-size: 1.2rem; 
+    color: #ffccdf;
+    text-shadow: 0 0 8px rgba(255, 102, 178, 0.5);
+    margin-top: 12px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+/* ==========================================
+   4. CONTENEDOR CENTRAL DEL RAMO Y RGB
+   ========================================== */
+.centro-ramo {
+    position: absolute;
+    bottom: 35px; 
+    left: 50%;
+    transform: translateX(-50%) scale(0.9); 
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.tulipan {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: bottom center; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: flotarTulipan 4s ease-in-out infinite;
+}
+
+/* Aplicamos la animación RGB directamente a los pétalos para que cambien de color de forma fluida */
+.tulipan .petalo {
+    animation: rgbPetalos 10s linear infinite;
+}
+
+/* Animación que cicla los colores de los pétalos por todo el espectro RGB */
+@keyframes rgbPetalos {
+    0% {
+        background: linear-gradient(to top, #ff409f, #ff85c2);
+        box-shadow: inset 0 0 8px rgba(0,0,0,0.15), 0 0 12px rgba(255,102,178,0.4);
+    }
+    25% {
+        background: linear-gradient(to top, #9f40ff, #c285ff); /* Tono morado/violeta */
+        box-shadow: inset 0 0 8px rgba(0,0,0,0.15), 0 0 12px rgba(159,64,255,0.4);
+    }
+    50% {
+        background: linear-gradient(to top, #e7c943, #f1ef48); /* Tono celeste/azul */
+        box-shadow: inset 0 0 8px rgba(0,0,0,0.15), 0 0 12px rgba(255, 230, 146, 0.938);
+    }
+    75% {
+        background: linear-gradient(to top, #ec9108, #e6be75); /* Tono menta/verde suave */
+        box-shadow: inset 0 0 8px rgba(0,0,0,0.15), 0 0 12px rgba(240, 139, 24, 0.932);
+    }
+    100% {
+        background: linear-gradient(to top, #ff409f, #ff85c2); /* Regresa al rosa original */
+        box-shadow: inset 0 0 8px rgba(0,0,0,0.15), 0 0 12px rgba(255,102,178,0.4);
+    }
+}
+
+.pt-1 { transform: rotate(-45deg) scale(0.95); }
+.pt-2 { transform: rotate(-30deg) scale(1.02); }
+.pt-3 { transform: rotate(-15deg) scale(1.08); }
+.pt-4 { transform: rotate(0deg)   scale(1.1);  } 
+.pt-5 { transform: rotate(15deg)  scale(1.08); }
+.pt-6 { transform: rotate(30deg)  scale(1.02); }
+.pt-7 { transform: rotate(45deg)  scale(0.95); }
+
+.pt-1 { animation: vientoFuerteIzquierda 4s ease-in-out infinite alternate; }
+.pt-2 { animation: vientoSuaveIzquierda 4.2s ease-in-out infinite alternate; }
+.pt-3 { animation: vientoSutilIzquierda 4.5s ease-in-out infinite alternate; }
+.pt-4 { animation: vientoCentro 3.8s ease-in-out infinite alternate; }
+.pt-5 { animation: vientoSutilDerecha 4.3s ease-in-out infinite alternate; }
+.pt-6 { animation: vientoSuaveDerecha 4.1s ease-in-out infinite alternate; }
+.pt-7 { animation: vientoFuerteDerecha 3.9s ease-in-out infinite alternate; }
+
+@keyframes vientoFuerteIzquierda { 0% { transform: rotate(-47deg) scale(0.95); } 100% { transform: rotate(-43deg) scale(0.95); } }
+@keyframes vientoSuaveIzquierda  { 0% { transform: rotate(-31deg) scale(1.02); } 100% { transform: rotate(-28deg) scale(1.02); } }
+@keyframes vientoSutilIzquierda  { 0% { transform: rotate(-16deg) scale(1.08); } 100% { transform: rotate(-14deg) scale(1.08); } }
+@keyframes vientoCentro          { 0% { transform: rotate(-1deg)   scale(1.1);  } 100% { transform: rotate(1deg)    scale(1.1);  } }
+@keyframes vientoSutilDerecha    { 0% { transform: rotate(14deg)   scale(1.08); } 100% { transform: rotate(16deg)   scale(1.08); } }
+@keyframes vientoSuaveDerecha    { 0% { transform: rotate(28deg)   scale(1.02); } 100% { transform: rotate(31deg)   scale(1.02); } }
+@keyframes vientoFuerteDerecha   { 0% { transform: rotate(43deg)   scale(0.95); } 100% { transform: rotate(47deg)   scale(0.95); } }
+
+/* ==========================================
+   5. ESTRUCTURA DE LA FLOR, TALLO Y LAZO
+   ========================================== */
+.flor {
+    position: relative;
+    width: 44px;
+    height: 50px;
+    z-index: 5;
+    transition: transform 0.2s ease;
+}
+
+.petalo {
+    position: absolute;
+    background: linear-gradient(to top, #ff409f, #ff85c2);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.15), 0 0 12px rgba(255,102,178,0.4);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.5s ease !important;
+}
+
+.petalo.centro { width: 30px; height: 50px; left: 7px; bottom: 0; z-index: 2; }
+.petalo.izq { width: 26px; height: 46px; left: 0; transform: rotate(-18deg); z-index: 1; }
+.petalo.der { width: 26px; height: 46px; right: 0; transform: rotate(18deg); z-index: 1; }
+
+.tallo {
+    width: 5px;
+    height: 280px;
+    background: linear-gradient(to top, #1b4d22, #2d7a3a);
+    border-radius: 3px;
+    margin-top: -3px;
+    z-index: 2;
+}
+
+/* --- DISEÑO BASE COMPARTIDO (MANTENIENDO TU ESTILO PERFECTO) --- */
+.hoja {
+    position: absolute;
+    width: 18px;
+    height: 70px;
+    background: linear-gradient(to top, #225e2b, #348f44);
+    z-index: 3;
+}
+
+/* ==================================================================
+   BLOQUE IZQUIERDO Y CENTRAL DEL ABANICO (pt-1, pt-2, pt-3, pt-4)
+   ================================================================== */
+
+/* Hoja 1 (Abajo): Tu configuración perfecta */
+.hoja.h1 {
+    bottom: 25%;
+    left: -12px;
+    border-radius: 0 100% 0 100%;
+    transform: rotate(-35deg);
+}
+
+/* Hoja 2 (Media-Baja): Apunta a la derecha */
+.hoja.h2 {
+    bottom: 43%;
+    left: 35px;
+    border-radius: 100% 0 100% 0;
+    transform: rotate(30deg);
+}
+
+/* Hoja 3 (Media-Alta): Tu código exacto en el punto dulce */
+.hoja.h3 {
+    bottom: 60%; /* Tu posición ideal */
+    left: -15px;
+    border-radius: 0 100% 0 100%;
+    transform: rotate(-30deg);
+}
+
+/* Hoja 4 (Arriba, cerca de la flor): Apunta a la derecha */
+.hoja.h4 {
+    bottom: 75%;
+    left: 30px;
+    border-radius: 100% 0 100% 0;
+    transform: rotate(20deg);
+}
+
+/* ==================================================================
+   ESPEJO DE ORIENTACIÓN PARA EL BLOQUE DERECHO (pt-5, pt-6, pt-7)
+   ================================================================== */
+.pt-5 .hoja.h1, .pt-6 .hoja.h1, .pt-7 .hoja.h1 {
+    left: auto; right: -10px;
+    border-radius: 100% 0 100% 0; transform: rotate(35deg);
+}
+
+.pt-5 .hoja.h2, .pt-6 .hoja.h2, .pt-7 .hoja.h2 {
+    left: auto; right: 35px;
+    border-radius: 0 100% 0 100%; transform: rotate(-30deg);
+}
+
+.pt-5 .hoja.h3, .pt-6 .hoja.h3, .pt-7 .hoja.h3 {
+    left: auto; right: -15px;
+    border-radius: 100% 0 100% 0; transform: rotate(30deg);
+}
+
+.pt-5 .hoja.h4, .pt-6 .hoja.h4, .pt-7 .hoja.h4 {
+    left: auto; right: 30px;
+    border-radius: 0 100% 0 100%; transform: rotate(-20deg);
+}
+
+.lazo-ramo {
+    position: absolute;
+    bottom: 5px;
+    width: 35px;
+    height: 20px;
+    border-radius: 5px;
+    z-index: 10;
+    animation: rgbMaceta 10s linear infinite; /* Animación RGB añadida */
+}
+
+.lazo-ramo::before, .lazo-ramo::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    top: -5px;
+    animation: rgbMaceta 10s linear infinite; /* Para que las esquinas también cambien */
+}
+.lazo-ramo::before { left: -5px; }
+.lazo-ramo::after { right: -5px; }
+
+/* Animación RGB para la maceta/base */
+@keyframes rgbMaceta {
+    0% {
+        background-color: #ff99bb;
+        box-shadow: 0 0 10px rgba(255, 179, 217, 0.8);
+    }
+    25% {
+        background-color: #bb99ff;
+        box-shadow: 0 0 10px rgba(187, 153, 255, 0.8);
+    }
+    50% {
+        background-color: #99d6ff;
+        box-shadow: 0 0 10px rgba(153, 214, 255, 0.8);
+    }
+    75% {
+        background-color: #99ffcc;
+        box-shadow: 0 0 10px rgba(153, 255, 204, 0.8);
+    }
+    100% {
+        background-color: #ff99bb;
+        box-shadow: 0 0 10px rgba(255, 179, 217, 0.8);
+    }
+}
+
+/* ==========================================
+   6. PARTÍCULAS ROSAS
+   ========================================== */
+.particula-rosa {
+    position: absolute;
+    background-color: #ff99cc;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(255, 102, 178, 1);
+    z-index: 10;
+    animation: flotarParticula 10s ease-in-out infinite alternate;
+}
+
+@keyframes flotarParticula {
+    0% { transform: translateY(0) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-50px) scale(1.1); opacity: 1; }
+    100% { transform: translateY(-100px) scale(1); opacity: 0.5; }
+}
+
+/* ==========================================
+   7. MODAL DE LA CARTA INTERACTIVA
+   ========================================== */
+#carta-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(5px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 300; 
+    transition: opacity 0.4s ease;
+}
+
+.carta-oculta { opacity: 0; pointer-events: none; }
+.carta-visible { opacity: 1; pointer-events: auto; }
+
+.carta-contenido {
+    background: linear-gradient(135deg, #fffcf5 0%, #f7f1e3 100%); 
+    padding: 30px 20px;
+    width: 90%; 
+    max-width: 380px;
+    max-height: 75vh;
+    overflow-y: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 102, 178, 0.3);
+    text-align: center;
+    position: relative;
+    transform: scale(0.7);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid #ffb3d9;
+}
+
+.carta-visible .carta-contenido { transform: scale(1); }
+
+#btn-cerrar-carta {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+#btn-cerrar-carta:hover { color: #ff409f; }
+
+.decoracion-carta {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    animation: latido 1.5s infinite ease-in-out;
+}
+@keyframes latido { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+#texto-carta {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+  /*8. RETOQUES FINALES Y EFECTOS HOVER*/
+
+.tulipan:hover {
+    filter: drop-shadow(0 0 15px rgba(255, 133, 194, 0.8));
+    z-index: 50; 
+}
+.tulipan:hover .flor { transform: scale(1.08); }
+.particula-rosa:nth-child(odd) { animation-duration: 8s; }
+.particula-rosa:nth-child(even) { animation-duration: 12s; }
+
+/*9. CIELO ESTRELLADO*/
+.estrellas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    animation: parpadeoEstrellas 6s linear infinite;
+    opacity: 0.5;
+}
+@keyframes parpadeoEstrellas { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+
+.estrella-fugaz {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 2px;
+    height: 2px;
+    animation: estelaFugaz 8s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+.estrella-fugaz::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.7), transparent);
+    transform: rotate(-45deg);
+}
+@keyframes estelaFugaz {
+    0% { top: -50px; left: 110%; width: 0px; }
+    10% { top: 30%; left: -10%; width: 100px; }
+    100% { top: 30%; left: -10%; width: 0px; }
+}
+
+/*10. EFECTO DE FLORECIMIENTO*/
+.tulipan.abierto .flor .petalo.izq {
+    transform: rotate(-38deg) translateY(-2px) !important;
+    background: linear-gradient(to top, #ff2a93, #ff99d1) !important;
+}
+.tulipan.abierto .flor .petalo.der {
+    transform: rotate(38deg) translateY(-2px) !important;
+    background: linear-gradient(to top, #ff2a93, #ff99d1) !important;
+}
+.tulipan.abierto .flor .petalo.centro {
+    transform: scaleY(1.1) !important;
+}
+.tulipan.abierto .flor {
+    filter: drop-shadow(0 0 15px rgba(255, 102, 178, 0.9)) !important;
+}
+
+/*11. CONTADOR DE PROGRESO Y RECOMPENSA FINAL*/
+#contador-progreso {
+    position: absolute;
+    top: 25px;
+    background: rgba(255, 102, 178, 0.2);
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid rgba(255, 102, 178, 0.4);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 15px rgba(255, 102, 178, 0.3);
+    z-index: 100;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#mensaje-final-sorpresa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7); 
+    
+    /* OPTIMIZACIÓN 1*/
+    background: #13060e; 
+    
+    padding: 35px 25px;
+    border-radius: 24px;
+    text-align: center;
+    max-width: 90%;
+    width: 460px;
+    max-height: 85vh;
+    overflow-y: auto;
+    
+    /* OPTIMIZACIÓN 2*/
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    
+    /* OPTIMIZACIÓN 3*/
+    border: 2px solid #ff66b2;
+    
+    will-change: transform, opacity;
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Clase que activa JS al completar los 7 tulipanes */
+#mensaje-final-sorpresa.mostrar {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Título interno */
+#mensaje-final-sorpresa h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 8px rgba(255, 102, 178, 0.6);
+}
+
+#mensaje-final-sorpresa p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #ffe6f2;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+/* Texto strong*/
+#mensaje-final-sorpresa p strong {
+    color: #ff99cc;
+    display: block;
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+/* Ajuste móviles */
+@media (max-width: 600px) {
+    #mensaje-final-sorpresa {
+        width: 80%;
+        padding: 30px 20px;
+    }
+    #mensaje-final-sorpresa h3 {
+        font-size: 2.3rem;
+    }
+    #mensaje-final-sorpresa p {
+        font-size: 0.95rem;
+    }
+}
+
+/*12. NUBE ESTÉTICA CON SNOOPY DURMIENDO*/
+.nube-snoopy {
+    position: absolute;
+    top: 35vh;            /* Posicionado en la parte superior del cielo */
+    left: 44%;            /* Al lado izquierdo para no estorbar los textos del centro */
+    z-index: 2;           /* Detrás de las cartas pero visible en el cielo */
+    pointer-events: none; /* Para que si da clic encima sin querer, no interrumpa nada */
+    animation: flotarNubeSnoopy 6s ease-in-out infinite alternate;
+}
+
+.nube-snoopy img {
+    width: 150px;    
+    height: auto;
+    filter: drop-shadow(0 0 12px rgba(187, 134, 252, 0.4)); /* Destello morado suave a la nube */
+    opacity: 0.85;        /* Un toque semitransparente para que combine con la noche */
+}
+
+/* Animación de vaivén relajado para Snoopy */
+@keyframes flotarNubeSnoopy {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) translateX(5px) rotate(1deg);
+    }
+    100% {
+        transform: translateY(4px) translateX(-5px) rotate(-1deg);
+    }
+}
+
+/* Ajuste para celulares*/
+@media (max-width: 600px) {
+    .nube-snoopy {
+        top: 14vh;
+        left: 5%;
+    }
+    .nube-snoopy img {
+        width: 85px; /* Un toque más chiquito en pantallas móviles */
+    }
+}
+
+/*13. JARDÍN BASE REALISTA (FOLLAJE Y PASTO)*/
+
+/*13.1 Matorral de hojas densas en el centro inferior */
+.jardin-follaje-centro {
+    position: absolute;
+    bottom: -10px;
+    width: 200px;
+    height: 120px;
+    z-index: 4; /* Queda abrazando los tallos por delante y detrás */
+    pointer-events: none;
+    background: 
+        /* Hoja central arqueada */
+        radial-gradient(circle at 50% 100%, #113f17 0%, #051a08 80%),
+        /* Hojas en abanico simuladas por sombras internas */
+        radial-gradient(circle at 20% 80%, #1b5e20 0%, #000000 70%);
+    border-radius: 50% 50% 20% 20% / 100% 100% 20% 20%;
+    filter: drop-shadow(0 -5px 15px rgba(5, 26, 8, 0.9));
+    opacity: 0.95;
+}
+
+.jardin-follaje-centro::before {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: -20px;
+    width: 120px;
+    height: 70px;
+    background: linear-gradient(135deg, #0e3a13, #041406);
+    border-radius: 100% 0% 90% 0%;
+    transform: rotate(-20deg);
+}
+
+.jardin-follaje-centro::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: -20px;
+    width: 120px;
+    height: 70px;
+    background: linear-gradient(225deg, #0e3a13, #041406);
+    border-radius: 0% 100% 0% 90%;
+    transform: rotate(20deg);
+}
+
+/* 13.2 Pasto alto */
+.jardin-pasto-izq {
+    position: absolute;
+    bottom: -10px;
+    left: -140px;
+    width: 80px;
+    height: 190px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/*tres hojas de pasto*/
+.jardin-pasto-izq::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 14px;
+    height: 180px;
+    background: linear-gradient(to top right, #051a08, #2e7d32, transparent);
+    border-radius: 100% 0% 0% 0%;
+    transform: rotate(-12deg);
+    transform-origin: bottom left;
+}
+
+.jardin-pasto-izq::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    width: 10px;
+    height: 140px;
+    background: linear-gradient(to top right, #051a08, #1b5e20, transparent);
+    border-radius: 100% 0% 0% 0%;
+    transform: rotate(5deg);
+}
+
+/* 13.3 PastoDERECHO */
+.jardin-pasto-der {
+    position: absolute;
+    bottom: -10px;
+    right: -140px;
+    width: 80px;
+    height: 190px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/*hojas de pasto lderecha */
+.jardin-pasto-der::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 14px;
+    height: 180px;
+    background: linear-gradient(to top left, #051a08, #2e7d32, transparent);
+    border-radius: 0% 100% 0% 0%;
+    transform: rotate(12deg);
+    transform-origin: bottom right;
+}
+
+.jardin-pasto-der::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    width: 10px;
+    height: 140px;
+    background: linear-gradient(to top left, #051a08, #1b5e20, transparent);
+    border-radius: 0% 100% 0% 0%;
+    transform: rotate(-5deg);
+}
+
+/* ==========================================
+   ESTILOS DEL GIRASOL CON DOBLE CAPA Y CONTRASTE
+   ========================================== */
+.flor-girasol {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centro marrón del girasol */
+.centro-girasol {
+    width: 42px;
+    height: 42px;
+    background: radial-gradient(circle, #5c2c16 40%, #3a1a0b 100%);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.8), 0 0 10px rgba(255, 140, 0, 0.6);
+}
+
+/* Estilo base de los pétalos delanteros */
+.petalo-g {
+    position: absolute;
+    width: 28px;
+    height: 75px;
+    background: linear-gradient(to top, #e69500, #ffcc00);
+    border-radius: 50%;
+    z-index: 6; /* Delante del centro y de la capa fondo */
+    box-shadow: 0 0 8px rgba(116, 75, 5, 0.4);
+    transform-origin: center 37px; 
+    animation: girarReversa 8s ease-in-out infinite;
+}
+
+/* Capa de pétalos traseros (más oscuros, cobrizos y con menor z-index) */
+.petalo-g.capa-fondo {
+    width: 26px;
+    height: 72px;
+    background: linear-gradient(to top, #b35900, #c59c14); /* Tonos más oscuros */
+    z-index: 4; /* Detrás de los principales */
+    filter: brightness(0.9); /* Un toque más opacos para generar profundidad */
+    /* Opcional: si quieres que giren al revés para un efecto más pro, cambia la animación aquí */
+}
+
+/* Posición inicial de los pétalos */
+.flor-girasol .petalo-g {
+    transform: rotate(var(--angulo)) translateY(-18px);
+}
+
+/* Animación de ida y vuelta */
+@keyframes girarReversa {
+    0% {
+        transform: rotate(var(--angulo)) translateY(-18px);
+    }
+    50% {
+        transform: rotate(calc(var(--angulo) + 360deg)) translateY(-18px);
+    }
+    100% {
+        transform: rotate(var(--angulo)) translateY(-18px);
+    }
+}
+
+/* ==========================================
+   ESTILOS NUEVOS: PERGAMINO DE BIENVENIDA
+   ========================================== */
+.pergamino-bienvenida {
+    position: relative;
+    background: linear-gradient(135deg, #fdf6e2 0%, #f4e4bc 50%, #e6d19c 100%);
+    padding: 18px 25px;
+    border-radius: 12px;
+    border: 2px solid #d4af37; /* Borde dorado elegante */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(184, 134, 11, 0.2);
+    max-width: 340px;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.pergamino-bienvenida h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.1rem;
+    margin: 0 0 6px 0;
+    color: #5c3a21; /* Tono marrón pergamino antiguo */
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.pergamino-bienvenida p {
+    font-size: 0.92rem;
+    color: #6b4c35;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.sello-corona {
+    position: absolute;
+    top: -12px;
+    font-size: 1.2rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+.sello-corona.izq { left: 15px; }
+.sello-corona.der { right: 15px; }
+
+
+/* ==========================================
+   ESTILOS NUEVOS: SECCIÓN FINAL (PERGAMINO + BOTÓN)
+   ========================================== */
+.final-cabello {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin: 20px 0 40px 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
+/* Mini pergamino para el texto de llegada */
+.pergamino-final {
+    position: relative;
+    background: linear-gradient(135deg, #fdf6e2 0%, #f4e4bc 50%, #e6d19c 100%);
+    padding: 12px 22px;
+    border-radius: 10px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), inset 0 0 12px rgba(184, 134, 11, 0.2);
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.texto-llegada {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    color: #5c3a21;
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Botón mágico rediseñado de alta gama */
+#btn-entrar-magia {
+    background: linear-gradient(135deg, #fdf6e2 0%, #f4e4bc 60%, #e6d19c 100%);
+    color: #5c3a21; /* Texto marrón pergamino oscuro para legibilidad y elegancia */
+    padding: 16px 26px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    border: 2.5px solid #d4af37; /* Marco dorado clásico */
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 6px 20px rgba(0,0,0,0.5);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 320px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#btn-entrar-magia:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.7), 0 10px 25px rgba(0,0,0,0.6);
+    background: linear-gradient(135deg, #ffffff 0%, #f7ebd0 60%, #ebd79e 100%);
+}
+
+#btn-entrar-magia:active {
+    transform: scale(0.97);
+}
+
+.icono-tulipan-izq, .icono-tulipan-der {
+    font-size: 1.1rem;
+    filter: drop-shadow(0 0 2px rgba(92, 58, 33, 0.3));
+}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Proyecto1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="pantalla-inicio">
+        <!-- Contenedor con scroll vertical para bajar por la torre -->
+        <div class="torre-rapunzel-container">
+            
+            <!-- Cabecera con la imagen de Rapunzel asomada en la torre y el pergamino mágico -->
+            <div class="cabecera-rapunzel">
+                <img src="https://files.catbox.moe/d7o5kk.png" alt="Rapunzel" class="img-rapunzel-torre">
+                <div class="pergamino-bienvenida">
+                    <div class="sello-corona izq">👑</div>
+                    <div class="contenido-pergamino">
+                        <h2>¡Bienvenida, Lihue!</h2>
+                        <p>Desliza hacia abajo para descubrir tu sorpresa...</p>
+                    </div>
+                    <div class="sello-corona der">👑</div>
+                </div>
+            </div>
+
+            <!-- Primera parte del cabello (conectada arriba) -->
+            <div class="secuencia-cabello-imagenes">
+                <img src="https://files.catbox.moe/3xee3t.png" alt="Cabello Rapunzel 1" class="img-tira-cabello cabello-1">
+            </div>
+
+            <!-- Botón final al fondo de la torre con diseño de placa mágica -->
+            <!-- Botón final al fondo de la torre con diseño de pergamino inferior -->
+            <div class="final-cabello">
+                <div class="pergamino-final">
+                    <div class="sello-corona izq">✨</div>
+                    <div class="contenido-pergamino">
+                        <p class="texto-llegada">HOLA LIBUE</p>
+                    </div>
+                    <div class="sello-corona der">✨</div>
+                </div>
+
+                <button id="btn-entrar-magia">
+                    <span class="icono-tulipan-izq">✨</span>
+                    <span class="texto-boton">Siguiente</span>
+                    <span class="icono-tulipan-der">✨</span>
+                </button>
+            </div>
+
+            <!-- Segunda parte del cabello (la punta final) -->
+            <div class="secuencia-cabello-imagenes punta-abajo">
+                <img src="https://files.catbox.moe/l8yop2.png" alt="Cabello Rapunzel Puntas" class="img-tira-cabello cabello-2">
+            </div>
+        </div>
+    </div>
+
+    <div id="escenario" class="oculto">
+        <div class="estrellas"></div>
+        <div class="estrella-fugaz"></div>
+        <div class="nube-snoopy">
+            <img src="https://s5.ezgif.com/tmp/ezgif-5cf70f0b66b2e1dd.gif" alt="Hola que miras">
+        </div>
+        
+        <div id="contador-progreso">🌷 FLORES DESCUBIERTAS 🌷: <span id="num-secretos">0</span> de 7</div>
+        
+        <div id="mensaje-final-sorpresa">
+            <h3> ¡FELIZ CUMPLEAÑOS, LIHUE! </h3>
+            <p>Descubriste cada mensaje secreto!! 🌸<br><br>
+            Aunque hoy nuestros caminos vayan por rumbos distintos y las cosas ya no sean como antes, nunca olvidé la promesa que te hice de hacerte este detalle. Quise terminarlo y dártelo porque hay personas que, sin importar el tiempo o la distancia, se quedan guardadas en un lugar especial de la memoria y merecen lo mejor.<br><br>
+            Dicen que uno siempre le desea el bien a las personas que en algún momento significaron mucho, y yo de verdad espero que la vida te esté tratando bonito. Ojalá estés cumpliendo cada uno de tus sueños, riéndote como te gusta y encontrando paz y felicidad en todo lo que haces.<br><br>
+            Gracias por todo lo compartido, por lo bueno y por lo que nos enseñó. Que este nuevo año de vida te traiga abrazos sinceros, pedazos de cielo y momentos que te hagan sentir infinitamente plena.<br><br>
+            <strong>Que tengas un cumpleaños hermoso, Lihue. Cuídate mucho.</strong></p>
+            Atte. Jhair<br><br>
+        </div>
+
+        <div class="texto-dedicatoria">
+            <p class="linea1">¡FELIZ CUMPLEAÑOS LIHUEEE!</p>
+            <p class="linea2">No tengo idea de cómo sean tus días ahora, pero sé lo suficiente de ti para desearte que la vida te sonría bonito y te guarde siempre lo mejor</p>
+        </div>
+
+        <div class="centro-ramo" id="ramo">
+            <div class="tulipan pt-1">
+                <div class="flor"><div class="petalo centro"></div><div class="petalo izq"></div><div class="petalo der"></div></div>
+                <div class="tallo"></div>
+                <div class="hoja h1"></div>
+                <div class="hoja h2"></div>
+                <div class="hoja h3"></div>
+                <div class="hoja h4"></div>
+            </div>
+            <div class="tulipan pt-2">
+                <div class="flor"><div class="petalo centro"></div><div class="petalo izq"></div><div class="petalo der"></div></div>
+                <div class="tallo"></div>
+                <div class="hoja h1"></div>
+                <div class="hoja h2"></div>
+                <div class="hoja h3"></div>
+                <div class="hoja h4"></div>
+            </div>
+            <div class="tulipan pt-3">
+                <div class="flor"><div class="petalo centro"></div><div class="petalo izq"></div><div class="petalo der"></div></div>
+                <div class="tallo"></div>
+                <div class="hoja h1"></div>
+                <div class="hoja h2"></div>
+                <div class="hoja h3"></div>
+                <div class="hoja h4"></div>
+            </div>
+            <div class="tulipan pt-4">
+                <div class="flor-girasol">
+                    <!-- Capa de pétalos traseros (más oscuros y con un desfase de ángulo) -->
+                    <div class="petalo-g capa-fondo" style="--angulo: 30deg;"></div>
+                    <div class="petalo-g capa-fondo" style="--angulo: 90deg;"></div>
+                    <div class="petalo-g capa-fondo" style="--angulo: 150deg;"></div>
+                    <div class="petalo-g capa-fondo" style="--angulo: 210deg;"></div>
+                    <div class="petalo-g capa-fondo" style="--angulo: 270deg;"></div>
+                    <div class="petalo-g capa-fondo" style="--angulo: 330deg;"></div>
+
+                    <!-- Capa de pétalos delanteros (los originales) -->
+                    <div class="petalo-g" style="--angulo: 0deg;"></div>
+                    <div class="petalo-g" style="--angulo: 60deg;"></div>
+                    <div class="petalo-g" style="--angulo: 120deg;"></div>
+                    <div class="petalo-g" style="--angulo: 180deg;"></div>
+                    <div class="petalo-g" style="--angulo: 240deg;"></div>
+                    <div class="petalo-g" style="--angulo: 300deg;"></div>
+                    
+                    <div class="centro-girasol"></div>
+                </div>
+                <div class="tallo"></div>
+                <div class="hoja h1"></div>
+                <div class="hoja h2"></div>
+                <div class="hoja h3"></div>
+                <div class="hoja h4"></div>
+            </div>
+            <div class="tulipan pt-5">
+                <div class="flor"><div class="petalo centro"></div><div class="petalo izq"></div><div class="petalo der"></div></div>
+                <div class="tallo"></div>
+                <div class="hoja h1"></div>
+                <div class="hoja h2"></div>
+                <div class="hoja h3"></div>
+                <div class="hoja h4"></div>
+            </div>
+            <div class="tulipan pt-6">
+                <div class="flor"><div class="petalo centro"></div><div class="petalo izq"></div><div class="petalo der"></div></div>
+                <div class="tallo"></div>
+                <div class="hoja h1"></div>
+                <div class="hoja h2"></div>
+                <div class="hoja h3"></div>
+                <div class="hoja h4"></div>
+            </div>
+            <div class="tulipan pt-7">
+                <div class="flor"><div class="petalo centro"></div><div class="petalo izq"></div><div class="petalo der"></div></div>
+                <div class="tallo"></div>
+                <div class="hoja h1"></div>
+                <div class="hoja h2"></div>
+                <div class="hoja h3"></div>
+                <div class="hoja h4"></div>
+            </div>
+        </div>
+            <div class="lazo-ramo"></div>
+        </div>
+
+        <div id="carta-modal" class="carta-oculta">
+            <div class="carta-contenido">
+                <button id="btn-cerrar-carta">&times;</button>
+                <div class="decoracion-carta">💌</div>
+                <p id="texto-carta">Aquí irá el mensaje personalizado del tulipán.</p>
+            </div>
+        </div>
+
+        <audio id="musica-inicio" loop>
+        <source src="musica2.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="musica-fondo" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="musica-final" loop>
+        <source src="musica3.mp3" type="audio/mpeg">
+        </audio>
+        </div>
+
+    <script>
+        // 1. REFERENCIAS PRINCIPALES
+        const btnEntrarMagia = document.getElementById('btn-entrar-magia');
+        const pantallaInicio = document.getElementById('pantalla-inicio');
+        const escenario = document.getElementById('escenario');
+        const musicaInicio = document.getElementById('musica-inicio');
+        const musica = document.getElementById('musica-fondo');
+        const musicaFinal = document.getElementById('musica-final');
+        
+        const cartaModal = document.getElementById('carta-modal');
+        const btnCerrarCarta = document.getElementById('btn-cerrar-carta');
+        const textoCarta = document.getElementById('texto-carta');
+
+        // Evento para activar la música de inicio al primer toque en la pantalla de la torre
+        document.addEventListener('click', () => {
+            if (musicaInicio.paused && pantallaInicio.style.display !== 'none') {
+                musicaInicio.play().catch(err => console.log("Audio de inicio listo"));
+            }
+        }, { once: true });
+
+        // Acción al presionar el botón final del cabello de Rapunzel
+        btnEntrarMagia.addEventListener('click', () => {
+            // Detener música de inicio
+            if (!musicaInicio.paused) {
+                musicaInicio.pause();
+                musicaInicio.currentTime = 0;
+            }
+
+            // Ocultar pantalla de inicio y mostrar el escenario de tulipanes
+            pantallaInicio.style.display = 'none';
+            escenario.classList.remove('oculto');
+
+            // Reproducir música principal del ramo
+            musica.play().catch(err => console.log("Error al reproducir audio principal:", err));
+
+            // Lanzar efectos iniciales
+            crearParticulasRosas(50);
+            configurarClicsTulipanes();
+        });
+
+        // 2. MENSAJES PERSONALIZADOS DE LOS TULIPANES
+        const mensajesTulipanes = {
+            'pt-1': 'Hay fechas en el calendario que brillan con luz propia, y hoy es una de ellas porque el mundo se ganó tu existencia. Feliz cumpleaños, Lihue',
+            'pt-2': 'Si pudiera regalarte algo hoy, sería la certeza de que tu paso por este mundo deja huella y que mereces todas las cosas hermosas que están por venir',
+            'pt-3': 'Que esta nueva vuelta al sol te encuentre con los ojos llenos de ilusiones nuevas',
+            'pt-4': 'Ojalá que este día te regale momentos que se queden a vivir en tu memoria para siempre, risas sinceras y esa calma bonita que tanto mereces sentir💖',
+            'pt-5': 'Que cada latido de hoy te recuerde lo valiosa que eres y que la vida te devuelva con creces toda la bondad que llevas dentro.',
+            'pt-6': 'Te prometí este rincón de magia para tu cumpleaños, un pequeño destello hecho con el corazón para decirte que jamás se olvida a quien marca bonito tu historia',
+            'pt-7': 'Feliz cumpleaños Lihue, Que la vida te sonría bonito, que nunca te falten motivos para soñar, y que pases un día tan especial como tuuu comprenderas:)'
+        };
+
+        // 3. LÓGICA DE LOS TULIPANES
+        let tulipanActivo = null;
+        const tulipanesDescubiertos = new Set(); 
+
+        function configurarClicsTulipanes() {
+            const tulipanes = document.querySelectorAll('.tulipan');
+            const txtContador = document.getElementById('num-secretos');
+
+            tulipanes.forEach(tulipan => {
+                tulipan.addEventListener('click', () => {
+                    let classId = '';
+                    tulipan.classList.forEach(clase => {
+                        if (clase.startsWith('pt-')) classId = clase;
+                    });
+
+                    if (mensajesTulipanes[classId]) {
+                        if (tulipanActivo) {
+                            tulipanActivo.classList.remove('abierto');
+                        }
+
+                        tulipanActivo = tulipan;
+                        tulipanActivo.classList.add('abierto');
+
+                        tulipanesDescubiertos.add(classId);
+                        txtContador.innerText = tulipanesDescubiertos.size;
+
+                        textoCarta.innerText = mensajesTulipanes[classId];
+                        cartaModal.className = 'carta-visible';
+                    }
+                });
+            });
+        }
+
+        // 4. CERRAR MODAL Y CAMBIO DE MÚSICA AL FINAL
+        function cerrarCartaYFlor() {
+            cartaModal.className = 'carta-oculta';
+            
+            if (tulipanActivo) {
+                tulipanActivo.classList.remove('abierto');
+                tulipanActivo = null;
+            }
+
+            // DETECTA SI YA ABRIÓ LOS 7 TULIPANES AL CERRAR LA ÚLTIMA CARTA
+            if (tulipanesDescubiertos.size === 7) {
+                const contProgreso = document.getElementById('contador-progreso');
+                const panelSorpresa = document.getElementById('mensaje-final-sorpresa');
+                const dedicatoria = document.querySelector('.texto-dedicatoria');
+
+                setTimeout(() => {
+                    if (contProgreso) {
+                        contProgreso.style.opacity = '0';
+                        contProgreso.style.transform = 'translateY(-20px)';
+                        contProgreso.style.transition = 'opacity 0.5s, transform 0.5s';
+                    }
+                    
+                    if (dedicatoria) {
+                        dedicatoria.style.opacity = '0';
+                        dedicatoria.style.transform = 'translateY(-10px)';
+                        dedicatoria.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        setTimeout(() => dedicatoria.classList.add('oculto'), 500);
+                    }
+
+                    // Cambio a la música final
+                    if (!musica.paused) {
+                        musica.pause();         
+                        musica.currentTime = 0;   
+                    }
+                    musicaFinal.play().catch(err => console.log("Error al reproducir música final:", err));
+
+                    crearParticulasRosas(85);
+                    
+                    if (panelSorpresa) {
+                        panelSorpresa.classList.add('mostrar');
+                    }
+                }, 400); 
+            }
+        }
+
+        btnCerrarCarta.addEventListener('click', cerrarCartaYFlor);
+        cartaModal.addEventListener('click', (e) => {
+            if (e.target === cartaModal) cerrarCartaYFlor();
+        });
+
+        // 5. EFECTO PARTÍCULAS FLOTANTES
+        function crearParticulasRosas(num) {
+            for (let i = 0; i < num; i++) {
+                const particula = document.createElement('div');
+                particula.classList.add('particula-rosa');
+                
+                const posX = Math.random() * window.innerWidth;
+                const posY = Math.random() * window.innerHeight * 0.7;
+                
+                particula.style.left = posX + 'px';
+                particula.style.top = posY + 'px';
+                
+                const tamaño = Math.random() * 4 + 2;
+                particula.style.width = tamaño + 'px';
+                particula.style.height = tamaño + 'px';
+                
+                const delay = Math.random() * 5;
+                particula.style.animationDelay = delay + 's';
+                
+                escenario.appendChild(particula);
+            }
+        }
+    </script>
